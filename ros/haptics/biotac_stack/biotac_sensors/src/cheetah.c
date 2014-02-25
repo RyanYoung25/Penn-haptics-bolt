@@ -59,8 +59,8 @@
 /*=========================================================================
 | VERSION CHECK
  ========================================================================*/
-#define CH_CFILE_VERSION   0x0300   /* v3.00 */
-#define CH_REQ_SW_VERSION  0x0300   /* v3.00 */
+#define CH_CFILE_VERSION   0x0306   /* v3.06 */
+#define CH_REQ_SW_VERSION  0x0306   /* v3.06 */
 
 /*
  * Make sure that the header file was included and that
@@ -246,10 +246,10 @@ static void *_loadFunction (const char *name, int *result) {
             return 0;
         }
 
-        version = (void *)dlsym(handle, "c_version");
+        version = (void *)dlsym(handle, "ch_c_version");
         if (version == 0) {
 #if API_DEBUG
-            fprintf(stderr, "Unable to bind c_version() in %s\n",
+            fprintf(stderr, "Unable to bind ch_c_version() in %s\n",
                     SO_NAME);
             fprintf(stderr, "%s\n", dlerror());
 #endif
